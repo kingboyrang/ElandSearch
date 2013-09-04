@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>RoadViewController</key>
+		<string>路平報修</string>
+	</dict>
+	<dict>
+		<key>LightViewController</key>
+		<string>路燈報修</string>
+	</dict>
+	<dict>
+		<key>EPViewController</key>
+		<string>環保查報</string>
+	</dict>
+	<dict>
+		<key>PetViewController</key>
+		<string>寵物協尋</string>
+	</dict>
+	<dict>
+		<key>TaxViewController</key>
+		<string>稅務預約</string>
+	</dict>
+	<dict>
+		<key>HRViewController</key>
+		<string>戶政預約</string>
+	</dict>
+	<dict>
+		<key>New item</key>
+		<string>本機案件查詢</string>
+	</dict>
+	<dict>
+		<key>New item</key>
+		<string>全部案件查詢</string>
+	</dict>
+	<dict>
+		<key>New item</key>
+		<string>推播訊息中心</string>
+	</dict>
+	<dict>
+		<key>New item</key>
+		<string>業務專區</string>
+	</dict>
+</array>
+</plist>

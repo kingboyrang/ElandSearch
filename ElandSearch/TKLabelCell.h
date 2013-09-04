@@ -46,4 +46,5 @@
 @property (nonatomic,strong) RCLabel *label;
 @property(nonatomic,assign) CGFloat labelLeftWith;
 -(RTLabelComponentsStructure*)labelName:(NSString*)title required:(BOOL)required;
+- (void)shake;
 @end

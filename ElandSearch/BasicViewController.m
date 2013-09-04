@@ -64,6 +64,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)resetNavigationBarBack{
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+    backItem.title = @"back";
+    self.navigationItem.backBarButtonItem = backItem;
+    [backItem release];
+}
 -(TKLabelTextFieldCell*)getCellCircular{
     return [self getCellCircular:@"案件分類:"];
 }

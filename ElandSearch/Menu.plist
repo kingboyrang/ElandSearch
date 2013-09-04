@@ -27,15 +27,15 @@
 		<string>戶政預約</string>
 	</dict>
 	<dict>
-		<key>New item</key>
+		<key>MachineSearch</key>
 		<string>本機案件查詢</string>
 	</dict>
 	<dict>
-		<key>New item</key>
+		<key>CompleteSearch</key>
 		<string>全部案件查詢</string>
 	</dict>
 	<dict>
-		<key>New item</key>
+		<key>PushInfo</key>
 		<string>推播訊息中心</string>
 	</dict>
 	<dict>

@@ -9,8 +9,9 @@
 #import "UserSetViewController.h"
 #import "TKLabelTextFieldCell.h"
 #import "TKButtonCell.h"
+#import "SecrecyViewController.h"
 @interface UserSetViewController ()
-
+-(void)buttonSave;
 @end
 
 @implementation UserSetViewController
@@ -43,6 +44,12 @@
     [_tableView setAutoresizesSubviews:YES];
     [_tableView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
     [self.view addSubview:_tableView];
+    
+    [self resetNavigationBarBack];
+    
+    UIBarButtonItem *rightBtn=[[UIBarButtonItem alloc] initWithTitle:@"存檔" style:UIBarButtonItemStylePlain target:self action:@selector(buttonSave)];
+    self.navigationItem.rightBarButtonItem=rightBtn;
+    [rightBtn release];
 
     
     TKLabelTextFieldCell *cell1=[[[TKLabelTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil] autorelease];
@@ -65,7 +72,17 @@
     self.cells =[NSMutableArray arrayWithObjects:cell1,cell2,cell3,cell4, nil];
 	// Do any additional setup after loading the view.
 }
-
+//保存
+-(void)buttonSave{
+    TKLabelTextFieldCell *cell1=(TKLabelTextFieldCell*)[self.cells objectAtIndex:0];
+    [cell1 shake];
+    TKLabelTextFieldCell *cell2=(TKLabelTextFieldCell*)[self.cells objectAtIndex:1];
+    [cell2 shake];
+    TKLabelTextFieldCell *cell3=(TKLabelTextFieldCell*)[self.cells objectAtIndex:2];
+    [cell3 shake];
+    TKLabelTextFieldCell *cell4=(TKLabelTextFieldCell*)[self.cells objectAtIndex:3];
+    [cell4 shake];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -79,7 +96,7 @@
     if (section==0) {
         return self.cells.count;
     }
-    return 2;
+    return 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section==0) {
@@ -89,11 +106,6 @@
         }
         return tableCell;
     }else{
-        if (indexPath.row==0) {
-            TKButtonCell *cell=[[TKButtonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-            cell.textLabel.text=@"存檔";
-            return cell;
-        }
         TKButtonCell *cell=[[TKButtonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         cell.textLabel.text=@"隱私及資訊安全保護政策";
         return cell;
@@ -101,5 +113,11 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if(indexPath.section==1&&indexPath.row==0){
+        SecrecyViewController *controller=[[SecrecyViewController alloc] init];
+        controller.title=@"隱私及資訊安全保護政策";
+        [self.navigationController pushViewController:controller animated:YES];
+        [controller release];
+    }
 }
 @end

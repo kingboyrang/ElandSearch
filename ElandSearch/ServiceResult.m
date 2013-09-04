@@ -11,7 +11,7 @@
 @synthesize request,userInfo;
 @synthesize xmlParse;
 @synthesize xmlValue,xmlString;
-@synthesize nameSpace,methodName;
+@synthesize nameSpace,methodName,xmlnsAttr;
 -(NSString*)nameSpace{
     if (!nameSpace) {
         if (self.request) {
@@ -61,6 +61,9 @@
         }
     }
     return xmlString;
+}
+-(NSString*)xmlnsAttr{
+    return [NSString stringWithFormat:@"xmlns=\"%@\"",[self nameSpace]];
 }
 +(id)requestResult:(ASIHTTPRequest*)httpRequest{
     ServiceResult *entity=[[ServiceResult alloc] init];

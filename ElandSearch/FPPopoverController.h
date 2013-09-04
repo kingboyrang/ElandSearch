@@ -63,6 +63,7 @@
 
 /** @brief Presenting the popover from a specified view **/
 -(void)presentPopoverFromView:(UIView*)fromView;
+-(void)presentPopoverFromView:(UIView*)fromView containerView:(UIView*)containerView;
 
 /** @brief Presenting the popover from a specified point **/
 -(void)presentPopoverFromPoint:(CGPoint)fromPoint;

@@ -15,6 +15,7 @@
 @property(nonatomic,copy) NSString *methodName;
 @property(nonatomic,copy) NSString *soapMessage;
 @property(nonatomic,readonly) NSMutableDictionary *headers;
+
 //soapMessage处理
 @property(nonatomic,readonly) NSString *defaultSoapMesage;
 @property(nonatomic,retain) NSArray *soapParams;

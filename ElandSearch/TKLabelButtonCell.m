@@ -36,7 +36,5 @@
 	r.origin.x += self.label.frame.size.width + 6;
 	r.size.width -= self.label.frame.size.width + 6;
 	_button.frame = r;
-	
-	
 }
 @end

@@ -32,6 +32,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self resetNavigationBarBack];
+    
     UIImage *img=[UIImage imageNamed:@"logo.png"];
     CGFloat leftx=(self.view.bounds.size.width-img.size.width)/2.0;
     UIImageView *logoView=[[UIImageView alloc] initWithImage:img];
@@ -49,6 +52,7 @@
     [_tableView setBackgroundColor:[UIColor clearColor]];
     [_tableView setAutoresizesSubviews:YES];
     [_tableView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
+    _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
     
     NSString *path=[[NSBundle mainBundle] pathForResource:@"Menu" ofType:@"plist"];
@@ -81,6 +85,9 @@
      NSString *key=[[dic allKeys] objectAtIndex:0];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     id viewController=[[NSClassFromString(key) alloc] init];
+    if ([viewController respondsToSelector:@selector(setTitle:)]) {
+        [viewController performSelector:@selector(setTitle:) withObject:[dic objectForKey:key]];
+    }
     [self.navigationController pushViewController:viewController animated:YES];
 }
 - (void)didReceiveMemoryWarning

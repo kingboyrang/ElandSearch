@@ -8,6 +8,7 @@
 
 #import "SecrecyViewController.h"
 #import "MainViewController.h"
+#import "UserSetViewController.h"
 @interface SecrecyViewController ()
 
 @end
@@ -26,14 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImage *img=[UIImage imageNamed:@"logo2.png"];
-    CGFloat leftx=(self.view.bounds.size.width-img.size.width)/2.0;
-    UIImageView *logoView=[[UIImageView alloc] initWithImage:img];
-    logoView.frame=CGRectMake(leftx, 0, img.size.width, img.size.height);
-    [logoView setAutoresizesSubviews:YES];
-    [logoView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
-    self.navigationItem.titleView=logoView;
-    [logoView release];
+    
     
     
     NSString *path=[[NSBundle mainBundle] pathForResource:@"Privacy" ofType:@"txt"];
@@ -52,11 +46,25 @@
     [self.view addSubview:textView];
     [textView release];
     
-    UIBarButtonItem *rightBtn=[[UIBarButtonItem alloc] initWithTitle:@"確認" style:UIBarButtonItemStyleBordered target:self action:@selector(buttonClick)];
     
-    self.navigationItem.rightBarButtonItem=rightBtn;
-    [rightBtn release];
-	// Do any additional setup after loading the view.
+    NSArray *views=self.navigationController.viewControllers;
+    if (![[views objectAtIndex:views.count-2] isKindOfClass:[UserSetViewController class]]) {
+        UIImage *img=[UIImage imageNamed:@"logo2.png"];
+        CGFloat leftx=(self.view.bounds.size.width-img.size.width)/2.0;
+        UIImageView *logoView=[[UIImageView alloc] initWithImage:img];
+        logoView.frame=CGRectMake(leftx, 0, img.size.width, img.size.height);
+        [logoView setAutoresizesSubviews:YES];
+        [logoView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+        self.navigationItem.titleView=logoView;
+        [logoView release];
+        
+        UIBarButtonItem *rightBtn=[[UIBarButtonItem alloc] initWithTitle:@"確認" style:UIBarButtonItemStyleBordered target:self action:@selector(buttonClick)];
+        
+        self.navigationItem.rightBarButtonItem=rightBtn;
+        [rightBtn release];
+
+    }
+    // Do any additional setup after loading the view.
 }
 -(void)buttonClick{
     MainViewController *main=[[MainViewController alloc] init];

@@ -18,9 +18,15 @@
         [view setAutoresizesSubviews:YES];
         [view setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
         view.backgroundColor=[UIColor clearColor];
-        UIImageView *imageView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_bg.png"]];
-        imageView.frame=self.bounds;
-        [imageView setContentMode:UIViewContentModeScaleToFill];
+        
+        
+        
+        UIImageView *imageView=[[UIImageView alloc] initWithFrame:CGRectMake(0, 0,self.bounds.size.width, self.bounds.size.height)];
+        //[imageView setContentMode:UIViewContentModeScaleToFill];
+        UIImage *defaultImage=[UIImage imageNamed:@"cell_default_bg.png"];
+        UIEdgeInsets insets = UIEdgeInsetsMake(4, 4, 4, 4);
+        defaultImage = [defaultImage resizableImageWithCapInsets:insets];
+        [imageView setImage:defaultImage];
         [imageView setAutoresizesSubviews:YES];
         [imageView setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
         [view addSubview:imageView];

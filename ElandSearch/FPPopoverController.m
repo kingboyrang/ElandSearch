@@ -275,8 +275,6 @@
         b.frame = bar_frame;
     }
 }
-
-
 -(CGPoint)originFromView:(UIView*)fromView
 {
     CGPoint p;
@@ -311,7 +309,65 @@
     _fromView = SAFE_ARC_RETAIN(fromView);
     [self presentPopoverFromPoint:[self originFromView:_fromView]];
 }
+-(void)presentPopoverFromView:(UIView*)fromView containerView:(UIView*)containerView{
+    SAFE_ARC_RELEASE(_fromView);
+    _fromView = SAFE_ARC_RETAIN(fromView);
+    
+    CGPoint fromPoint=[self originFromView:_fromView];
+    self.origin = fromPoint;
+    
+    //NO BORDER
+    if(self.border == NO)
+    {
+        _viewController.title = nil;
+        _viewController.view.clipsToBounds = YES;
+    }
+    
+    _contentView.relativeOrigin = [_parentView convertPoint:fromPoint toView:_contentView];
+    
+    [self.view removeFromSuperview];
+    NSArray *windows = [UIApplication sharedApplication].windows;
+    if(windows.count > 0)
+    {
+        _parentView=nil;
+        _window = [windows objectAtIndex:0];
+        //keep the first subview
+        if(_window.subviews.count > 0)
+        {
+            //_parentView = [_window.subviews objectAtIndex:0];
+            _parentView=containerView;
+            [_parentView addSubview:self.view];
+            [_viewController viewDidAppear:YES];
+        }
+        
+    }
+    else
+    {
+        [self dismissPopoverAnimated:NO];
+    }
+    
+    
+    
+    [self setupView];
+    self.view.alpha = 0.0;
+    [UIView animateWithDuration:0.2 animations:^{
+        
+        self.view.alpha = self.alpha;
+    }];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"FPNewPopoverPresented" object:self];
+    
+    //navigation controller bar fix
+    if([_viewController isKindOfClass:[UINavigationController class]])
+    {
+        UINavigationController *nc = (UINavigationController*)_viewController;
+        UINavigationBar *b = nc.navigationBar;
+        CGRect bar_frame = b.frame;
+        bar_frame.origin.y = 0;
+        b.frame = bar_frame;
+    }
 
+}
 -(void)dismissPopover
 {
     [self.view removeFromSuperview];

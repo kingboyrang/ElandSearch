@@ -20,7 +20,6 @@ static NSString *defaultWebServiceNameSpace=@"http://210.69.148.65/ELandWE.Admin
 @synthesize webURL,headers,defaultSoapMesage;
 @synthesize soapParams;
 
-
 +(void)setWebServiceURL:(NSString*)url
 {
     if (defaultWebServiceUrl!=url) {
@@ -65,6 +64,7 @@ static NSString *defaultWebServiceNameSpace=@"http://210.69.148.65/ELandWE.Admin
     }
     return [self stringSoapMessage:[self soapParams]];
 }
+
 -(NSMutableDictionary*)headers{
     NSMutableDictionary *dic=[NSMutableDictionary dictionary];
     [dic setValue:[[self webURL] host] forKey:@"Host"];

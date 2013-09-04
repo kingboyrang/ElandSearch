@@ -39,7 +39,6 @@
     [super viewDidLoad];
     
     CGRect rect=self.view.bounds;
-    
     _tableView=[[UITableView alloc] initWithFrame:rect style:UITableViewStyleGrouped];
     _tableView.dataSource=self;
     _tableView.delegate=self;

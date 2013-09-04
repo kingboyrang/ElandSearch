@@ -36,6 +36,9 @@
 -(void)loadPhotos;
 -(void)deletePhotoScrollCell;
 
+//重设返回按钮
+-(void)resetNavigationBarBack;
+
 -(TKLabelTextFieldCell*)getCellCircular;
 -(TKLabelTextFieldCell*)getCellCircular:(NSString*)title;
 -(TKLabelTextFieldCell*)getCellCity;

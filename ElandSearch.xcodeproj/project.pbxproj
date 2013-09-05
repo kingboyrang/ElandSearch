@@ -11,6 +11,10 @@
 		01952B1717A9035F00A09D55 /* view_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 01952B1617A9035F00A09D55 /* view_bg.png */; };
 		01952B1A17A909DC00A09D55 /* cell_sel_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 01952B1817A909DC00A09D55 /* cell_sel_bg.png */; };
 		01952B1B17A909DC00A09D55 /* tabbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 01952B1917A909DC00A09D55 /* tabbar_bg.png */; };
+		2665192D17D8DAFE0060A779 /* ElandCaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2665192817D8DAFE0060A779 /* ElandCaseViewController.m */; };
+		2665192E17D8DAFE0060A779 /* AnimateLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2665192A17D8DAFE0060A779 /* AnimateLoadView.m */; };
+		2665192F17D8DAFE0060A779 /* AnimateErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2665192C17D8DAFE0060A779 /* AnimateErrorView.m */; };
+		2665193117D8DB100060A779 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = 2665193017D8DB100060A779 /* error.png */; };
 		2687F63F17AD871100743C9F /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2687F63A17AD871100743C9F /* FPPopoverController.m */; };
 		2687F64017AD871100743C9F /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2687F63C17AD871100743C9F /* FPPopoverView.m */; };
 		2687F64117AD871100743C9F /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2687F63E17AD871100743C9F /* FPTouchView.m */; };
@@ -191,6 +195,13 @@
 		01952B1617A9035F00A09D55 /* view_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view_bg.png; sourceTree = "<group>"; };
 		01952B1817A909DC00A09D55 /* cell_sel_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_sel_bg.png; sourceTree = "<group>"; };
 		01952B1917A909DC00A09D55 /* tabbar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_bg.png; sourceTree = "<group>"; };
+		2665192717D8DAFE0060A779 /* ElandCaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElandCaseViewController.h; sourceTree = "<group>"; };
+		2665192817D8DAFE0060A779 /* ElandCaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElandCaseViewController.m; sourceTree = "<group>"; };
+		2665192917D8DAFE0060A779 /* AnimateLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimateLoadView.h; sourceTree = "<group>"; };
+		2665192A17D8DAFE0060A779 /* AnimateLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimateLoadView.m; sourceTree = "<group>"; };
+		2665192B17D8DAFE0060A779 /* AnimateErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimateErrorView.h; sourceTree = "<group>"; };
+		2665192C17D8DAFE0060A779 /* AnimateErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimateErrorView.m; sourceTree = "<group>"; };
+		2665193017D8DB100060A779 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
 		2687F63817AD871100743C9F /* ARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCMacros.h; sourceTree = "<group>"; };
 		2687F63917AD871100743C9F /* FPPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverController.h; sourceTree = "<group>"; };
 		2687F63A17AD871100743C9F /* FPPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverController.m; sourceTree = "<group>"; };
@@ -505,6 +516,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2665192617D8DAEF0060A779 /* Inherit */ = {
+			isa = PBXGroup;
+			children = (
+				2665192717D8DAFE0060A779 /* ElandCaseViewController.h */,
+				2665192817D8DAFE0060A779 /* ElandCaseViewController.m */,
+				2665192917D8DAFE0060A779 /* AnimateLoadView.h */,
+				2665192A17D8DAFE0060A779 /* AnimateLoadView.m */,
+				2665192B17D8DAFE0060A779 /* AnimateErrorView.h */,
+				2665192C17D8DAFE0060A779 /* AnimateErrorView.m */,
+			);
+			name = Inherit;
+			sourceTree = "<group>";
+		};
 		2687F63717AD870100743C9F /* FPPopover */ = {
 			isa = PBXGroup;
 			children = (
@@ -755,6 +779,7 @@
 		26A22E43179EA96200CD4481 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				2665193017D8DB100060A779 /* error.png */,
 				26A0BFFF17D2F1D500AF6317 /* cell_default_bg.png */,
 				26A1B80617D23B100026D34F /* cell_title.png */,
 				26A3EE2217CE16A80056D57C /* checkbox-checked.png */,
@@ -797,6 +822,7 @@
 		26A22E48179EAC6400CD4481 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				2665192617D8DAEF0060A779 /* Inherit */,
 				269FA70E17D321B400998526 /* Blocks */,
 				26A5133717B7CD5700ED5299 /* QBImagePicker */,
 				26A19C3C17B13D1A0049F221 /* Model */,
@@ -1219,6 +1245,7 @@
 				26A9055C17D19CB800C0A6BB /* blueArrowDown@2x.png in Resources */,
 				26A1B80717D23B100026D34F /* cell_title.png in Resources */,
 				26A0C00017D2F1D500AF6317 /* cell_default_bg.png in Resources */,
+				2665193117D8DB100060A779 /* error.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1334,6 +1361,9 @@
 				26FD25B217D609BF0028F3DF /* CVUIPopoverText.m in Sources */,
 				26FD25B517D609CB0028F3DF /* CVUICalendar.m in Sources */,
 				26FD25B917D60D330028F3DF /* TKLabelCalendarCell.m in Sources */,
+				2665192D17D8DAFE0060A779 /* ElandCaseViewController.m in Sources */,
+				2665192E17D8DAFE0060A779 /* AnimateLoadView.m in Sources */,
+				2665192F17D8DAFE0060A779 /* AnimateErrorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

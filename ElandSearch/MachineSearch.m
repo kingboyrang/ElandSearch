@@ -105,6 +105,12 @@
     if (self.refreshing) {
         self.refreshing=NO;
     }
+    if (!self.hasNetwork) {
+        [self.tableView tableViewDidFinishedLoading];
+        self.tableView.reachedTheEnd  = NO;
+        [self showNoNetworkErrorView];
+        return;
+    }
     /**
     if (![NetWorkConnection connectedToNetwork]){
         [self.tableView tableViewDidFinishedLoadingWithMessage:@"網絡連接失敗!"];

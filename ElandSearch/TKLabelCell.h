@@ -37,7 +37,6 @@
 */
 @interface TKLabelCell : UITableViewCell
 
-
 ///----------------------------
 /// @name Properties
 ///----------------------------
@@ -47,4 +46,5 @@
 @property(nonatomic,assign) CGFloat labelLeftWith;
 -(RTLabelComponentsStructure*)labelName:(NSString*)title required:(BOOL)required;
 - (void)shake;
+-(NSString*)Trim:(NSString*)str;
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "ElandCaseViewController.h"
-
+#import "WBErrorNoticeView.h"
 @interface ElandCaseViewController (){
     AnimateLoadView *_loadView;
     AnimateErrorView *_errorView;
@@ -16,6 +16,7 @@
 @end
 
 @implementation ElandCaseViewController
+@synthesize hasNetwork=_hasNetwork;
 -(void)dealloc{
     [super dealloc];
     if(_loadView){
@@ -24,7 +25,7 @@
     if(_errorView){
         [_errorView release],_errorView=nil;
     }
-
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +39,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNetworkNotice:) name:@"networkNotice" object:nil];
 	// Do any additional setup after loading the view.
 }
 
@@ -45,6 +48,19 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)receiveNetworkNotice:(NSNotification*)notice{
+    NSDictionary *dic=[notice userInfo];
+    NSNumber *number=[dic objectForKey:@"isConnection"];
+    BOOL isConnection=[number boolValue];
+    _hasNetwork=isConnection;
+    if (!isConnection) {
+        [self showNoNetworkErrorView];
+    }
+}
+-(void)showNoNetworkErrorView{
+    WBErrorNoticeView *notice = [WBErrorNoticeView errorNoticeInView:self.view title:@"Network Error" message:@"Check your network connection."];
+    [notice show];
 }
 #pragma mark 公有方法
 -(AnimateErrorView*) errorView {

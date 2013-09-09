@@ -59,6 +59,18 @@
 		26A1B80C17D2421C0026D34F /* NSDate+TPCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A1B80917D2421C0026D34F /* NSDate+TPCategory.m */; };
 		26A1B80D17D2421C0026D34F /* NSString+TPCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A1B80B17D2421C0026D34F /* NSString+TPCategory.m */; };
 		26A1B81017D2422E0026D34F /* NSData+TPCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A1B80F17D2422E0026D34F /* NSData+TPCategory.m */; };
+		26A201BB17DDF17400E00F42 /* NetWorkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A201BA17DDF17400E00F42 /* NetWorkConnection.m */; };
+		26A201D317DDF1DF00E00F42 /* NoticeView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 26A201BD17DDF1DF00E00F42 /* NoticeView.bundle */; };
+		26A201D417DDF1DF00E00F42 /* NSOperationQueue+WBNoticeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A201BF17DDF1DF00E00F42 /* NSOperationQueue+WBNoticeExtensions.m */; };
+		26A201D517DDF1DF00E00F42 /* UILabel+WBExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A201C117DDF1DF00E00F42 /* UILabel+WBExtensions.m */; };
+		26A201D617DDF1DF00E00F42 /* WBBlueGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A201C317DDF1DF00E00F42 /* WBBlueGradientView.m */; };
+		26A201D717DDF1DF00E00F42 /* WBErrorNoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A201C517DDF1DF00E00F42 /* WBErrorNoticeView.m */; };
+		26A201D817DDF1DF00E00F42 /* WBGrayGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A201C717DDF1DF00E00F42 /* WBGrayGradientView.m */; };
+		26A201D917DDF1DF00E00F42 /* WBNoticeOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A201C917DDF1DF00E00F42 /* WBNoticeOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		26A201DA17DDF1DF00E00F42 /* WBNoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A201CC17DDF1DF00E00F42 /* WBNoticeView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		26A201DB17DDF1DF00E00F42 /* WBRedGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A201CE17DDF1DF00E00F42 /* WBRedGradientView.m */; };
+		26A201DC17DDF1DF00E00F42 /* WBStickyNoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A201D017DDF1DF00E00F42 /* WBStickyNoticeView.m */; };
+		26A201DD17DDF1DF00E00F42 /* WBSuccessNoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A201D217DDF1DF00E00F42 /* WBSuccessNoticeView.m */; };
 		26A22E1D179EA8C200CD4481 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A22E1C179EA8C200CD4481 /* UIKit.framework */; };
 		26A22E1F179EA8C200CD4481 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A22E1E179EA8C200CD4481 /* Foundation.framework */; };
 		26A22E21179EA8C200CD4481 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A22E20179EA8C200CD4481 /* CoreGraphics.framework */; };
@@ -284,6 +296,30 @@
 		26A1B80B17D2421C0026D34F /* NSString+TPCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TPCategory.m"; sourceTree = "<group>"; };
 		26A1B80E17D2422E0026D34F /* NSData+TPCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+TPCategory.h"; sourceTree = "<group>"; };
 		26A1B80F17D2422E0026D34F /* NSData+TPCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+TPCategory.m"; sourceTree = "<group>"; };
+		26A201B917DDF17400E00F42 /* NetWorkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkConnection.h; sourceTree = "<group>"; };
+		26A201BA17DDF17400E00F42 /* NetWorkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkConnection.m; sourceTree = "<group>"; };
+		26A201BD17DDF1DF00E00F42 /* NoticeView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NoticeView.bundle; sourceTree = "<group>"; };
+		26A201BE17DDF1DF00E00F42 /* NSOperationQueue+WBNoticeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+WBNoticeExtensions.h"; sourceTree = "<group>"; };
+		26A201BF17DDF1DF00E00F42 /* NSOperationQueue+WBNoticeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+WBNoticeExtensions.m"; sourceTree = "<group>"; };
+		26A201C017DDF1DF00E00F42 /* UILabel+WBExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+WBExtensions.h"; sourceTree = "<group>"; };
+		26A201C117DDF1DF00E00F42 /* UILabel+WBExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+WBExtensions.m"; sourceTree = "<group>"; };
+		26A201C217DDF1DF00E00F42 /* WBBlueGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBBlueGradientView.h; sourceTree = "<group>"; };
+		26A201C317DDF1DF00E00F42 /* WBBlueGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBBlueGradientView.m; sourceTree = "<group>"; };
+		26A201C417DDF1DF00E00F42 /* WBErrorNoticeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBErrorNoticeView.h; sourceTree = "<group>"; };
+		26A201C517DDF1DF00E00F42 /* WBErrorNoticeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBErrorNoticeView.m; sourceTree = "<group>"; };
+		26A201C617DDF1DF00E00F42 /* WBGrayGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBGrayGradientView.h; sourceTree = "<group>"; };
+		26A201C717DDF1DF00E00F42 /* WBGrayGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBGrayGradientView.m; sourceTree = "<group>"; };
+		26A201C817DDF1DF00E00F42 /* WBNoticeOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBNoticeOperation.h; sourceTree = "<group>"; };
+		26A201C917DDF1DF00E00F42 /* WBNoticeOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBNoticeOperation.m; sourceTree = "<group>"; };
+		26A201CA17DDF1DF00E00F42 /* WBNoticeView+ForSubclassEyesOnly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBNoticeView+ForSubclassEyesOnly.h"; sourceTree = "<group>"; };
+		26A201CB17DDF1DF00E00F42 /* WBNoticeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBNoticeView.h; sourceTree = "<group>"; };
+		26A201CC17DDF1DF00E00F42 /* WBNoticeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBNoticeView.m; sourceTree = "<group>"; };
+		26A201CD17DDF1DF00E00F42 /* WBRedGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBRedGradientView.h; sourceTree = "<group>"; };
+		26A201CE17DDF1DF00E00F42 /* WBRedGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBRedGradientView.m; sourceTree = "<group>"; };
+		26A201CF17DDF1DF00E00F42 /* WBStickyNoticeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBStickyNoticeView.h; sourceTree = "<group>"; };
+		26A201D017DDF1DF00E00F42 /* WBStickyNoticeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBStickyNoticeView.m; sourceTree = "<group>"; };
+		26A201D117DDF1DF00E00F42 /* WBSuccessNoticeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSuccessNoticeView.h; sourceTree = "<group>"; };
+		26A201D217DDF1DF00E00F42 /* WBSuccessNoticeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSuccessNoticeView.m; sourceTree = "<group>"; };
 		26A22E18179EA8C200CD4481 /* ElandSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElandSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A22E1C179EA8C200CD4481 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		26A22E1E179EA8C200CD4481 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -712,6 +748,44 @@
 			name = SearchCell;
 			sourceTree = "<group>";
 		};
+		26A201B817DDF14D00E00F42 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				26A201B917DDF17400E00F42 /* NetWorkConnection.h */,
+				26A201BA17DDF17400E00F42 /* NetWorkConnection.m */,
+			);
+			name = NetWork;
+			sourceTree = "<group>";
+		};
+		26A201BC17DDF1DF00E00F42 /* WBNoticeView */ = {
+			isa = PBXGroup;
+			children = (
+				26A201BD17DDF1DF00E00F42 /* NoticeView.bundle */,
+				26A201BE17DDF1DF00E00F42 /* NSOperationQueue+WBNoticeExtensions.h */,
+				26A201BF17DDF1DF00E00F42 /* NSOperationQueue+WBNoticeExtensions.m */,
+				26A201C017DDF1DF00E00F42 /* UILabel+WBExtensions.h */,
+				26A201C117DDF1DF00E00F42 /* UILabel+WBExtensions.m */,
+				26A201C217DDF1DF00E00F42 /* WBBlueGradientView.h */,
+				26A201C317DDF1DF00E00F42 /* WBBlueGradientView.m */,
+				26A201C417DDF1DF00E00F42 /* WBErrorNoticeView.h */,
+				26A201C517DDF1DF00E00F42 /* WBErrorNoticeView.m */,
+				26A201C617DDF1DF00E00F42 /* WBGrayGradientView.h */,
+				26A201C717DDF1DF00E00F42 /* WBGrayGradientView.m */,
+				26A201C817DDF1DF00E00F42 /* WBNoticeOperation.h */,
+				26A201C917DDF1DF00E00F42 /* WBNoticeOperation.m */,
+				26A201CA17DDF1DF00E00F42 /* WBNoticeView+ForSubclassEyesOnly.h */,
+				26A201CB17DDF1DF00E00F42 /* WBNoticeView.h */,
+				26A201CC17DDF1DF00E00F42 /* WBNoticeView.m */,
+				26A201CD17DDF1DF00E00F42 /* WBRedGradientView.h */,
+				26A201CE17DDF1DF00E00F42 /* WBRedGradientView.m */,
+				26A201CF17DDF1DF00E00F42 /* WBStickyNoticeView.h */,
+				26A201D017DDF1DF00E00F42 /* WBStickyNoticeView.m */,
+				26A201D117DDF1DF00E00F42 /* WBSuccessNoticeView.h */,
+				26A201D217DDF1DF00E00F42 /* WBSuccessNoticeView.m */,
+			);
+			path = WBNoticeView;
+			sourceTree = "<group>";
+		};
 		26A22E0D179EA8C200CD4481 = {
 			isa = PBXGroup;
 			children = (
@@ -822,6 +896,8 @@
 		26A22E48179EAC6400CD4481 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				26A201BC17DDF1DF00E00F42 /* WBNoticeView */,
+				26A201B817DDF14D00E00F42 /* NetWork */,
 				2665192617D8DAEF0060A779 /* Inherit */,
 				269FA70E17D321B400998526 /* Blocks */,
 				26A5133717B7CD5700ED5299 /* QBImagePicker */,
@@ -1246,6 +1322,7 @@
 				26A1B80717D23B100026D34F /* cell_title.png in Resources */,
 				26A0C00017D2F1D500AF6317 /* cell_default_bg.png in Resources */,
 				2665193117D8DB100060A779 /* error.png in Resources */,
+				26A201D317DDF1DF00E00F42 /* NoticeView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1364,6 +1441,17 @@
 				2665192D17D8DAFE0060A779 /* ElandCaseViewController.m in Sources */,
 				2665192E17D8DAFE0060A779 /* AnimateLoadView.m in Sources */,
 				2665192F17D8DAFE0060A779 /* AnimateErrorView.m in Sources */,
+				26A201BB17DDF17400E00F42 /* NetWorkConnection.m in Sources */,
+				26A201D417DDF1DF00E00F42 /* NSOperationQueue+WBNoticeExtensions.m in Sources */,
+				26A201D517DDF1DF00E00F42 /* UILabel+WBExtensions.m in Sources */,
+				26A201D617DDF1DF00E00F42 /* WBBlueGradientView.m in Sources */,
+				26A201D717DDF1DF00E00F42 /* WBErrorNoticeView.m in Sources */,
+				26A201D817DDF1DF00E00F42 /* WBGrayGradientView.m in Sources */,
+				26A201D917DDF1DF00E00F42 /* WBNoticeOperation.m in Sources */,
+				26A201DA17DDF1DF00E00F42 /* WBNoticeView.m in Sources */,
+				26A201DB17DDF1DF00E00F42 /* WBRedGradientView.m in Sources */,
+				26A201DC17DDF1DF00E00F42 /* WBStickyNoticeView.m in Sources */,
+				26A201DD17DDF1DF00E00F42 /* WBSuccessNoticeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

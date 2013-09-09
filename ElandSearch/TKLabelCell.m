@@ -45,6 +45,7 @@
     _label.font = [UIFont boldSystemFontOfSize:12.0];
 	[self.contentView addSubview:_label];
 
+   
     
     return self;
 }
@@ -115,7 +116,15 @@
     [animationKey setKeyTimes:times];
     [times release];
     
-    [self.layer addAnimation:animationKey forKey:@"TextFieldShake"];
+    [self.layer addAnimation:animationKey forKey:@"CellTextFieldShake"];
 }
 
+-(NSString*)Trim:(NSString*)str{
+    if (str) {
+        //whitespaceAndNewlineCharacterSet 去除前后空格与回车
+        //whitespaceCharacterSet 除前后空格
+        return [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    }
+    return @"";
+}
 @end

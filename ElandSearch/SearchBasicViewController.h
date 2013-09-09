@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "VCircular.h"
 #import "PullingRefreshTableView.h"
-@interface SearchBasicViewController : UIViewController<PullingRefreshTableViewDelegate,UITableViewDataSource,UITableViewDelegate>
+#import "ElandCaseViewController.h"
+@interface SearchBasicViewController : ElandCaseViewController<PullingRefreshTableViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic) BOOL refreshing;
 @property(nonatomic,retain) PullingRefreshTableView *tableView;

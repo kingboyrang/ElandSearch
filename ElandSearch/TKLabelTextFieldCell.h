@@ -33,9 +33,24 @@
 #import "TKLabelCell.h"
 #import "EMKeyboardBarTextField.h"
 /** A `TKLabelCell` with a `UITextField` field. */
-@interface TKLabelTextFieldCell : TKLabelCell<UITextFieldDelegate>
-
+@interface TKLabelTextFieldCell : TKLabelCell<UITextFieldDelegate>{
+    CGFloat _cornerRadio;
+	UIColor *_borderColor;
+	CGFloat _borderWidth;
+	UIColor *_lightColor;
+	CGFloat _lightSize;
+	UIColor *_lightBorderColor;
+}
 /** A `UITextField` field. */
 @property (nonatomic,strong) EMKeyboardBarTextField *field;
-
+@property(nonatomic,readonly) BOOL hasValue;
+@property(nonatomic,assign) BOOL required;
+- (void)errorVerify;
+- (void)errorVerify:(CGFloat)radio
+		borderColor:(UIColor*)bColor
+		borderWidth:(CGFloat)bWidth
+		 lightColor:(UIColor*)lColor
+		  lightSize:(CGFloat)lSize
+   lightBorderColor:(UIColor*)lbColor;
+- (void)removeVerify;
 @end

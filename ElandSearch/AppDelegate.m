@@ -11,6 +11,7 @@
 #import "UserSet.h"
 #import "SecrecyViewController.h"
 #import "MainViewController.h"
+#import "NetWorkConnection.h"
 @implementation AppDelegate
 - (void)dealloc
 {
@@ -43,6 +44,12 @@
         self.window.rootViewController = main;
     }
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTintColor:[UIColor colorWithRed:104/255.0 green:171/255.0 blue:4/255.0 alpha:1.0]];
+    //实时监听网络
+    [[NetWorkConnection sharedInstance] dynamicListenerNetwork:^(NetworkStatus status, BOOL isConnection) {
+         NSNumber *boo=[[[NSNumber alloc] initWithBool:isConnection] autorelease];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"networkNotice" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:boo,@"isConnection", nil]];
+    }];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -13,7 +13,8 @@
 #import "CaseImageSelect.h"
 #import "MKPhotoScroll.h"
 #import "TKEmptyCell.h"
-@interface BasicViewController : UIViewController<FPPopoverControllerDelegate,CaseImageSelectDelegate,MKPhotoScrollDelegate>{
+#import "ElandCaseViewController.h"
+@interface BasicViewController : ElandCaseViewController<FPPopoverControllerDelegate,CaseImageSelectDelegate,MKPhotoScrollDelegate>{
 @private
     FPPopoverController *popoverCity;
     FPPopoverController *popoverCircular;

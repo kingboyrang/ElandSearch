@@ -40,5 +40,5 @@
 
 /** A `UITextView` field. */
 @property (nonatomic,strong) GCPlaceholderTextView *textView;
-
+@property(nonatomic,readonly) BOOL hasValue;
 @end

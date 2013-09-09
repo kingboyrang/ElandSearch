@@ -32,7 +32,7 @@
 #import "TKLabelTextViewCell.h"
 
 @implementation TKLabelTextViewCell
-
+@synthesize hasValue;
 - (id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
 	if(!(self=[super initWithStyle:style reuseIdentifier:reuseIdentifier])) return nil;
     
@@ -72,7 +72,11 @@
 	[super setHighlighted:highlighted animated:animated];
 	[self _colorText:highlighted];
 }
-
-
-
+-(BOOL)hasValue{
+    NSString *str=[self Trim:self.textView.text];
+    if ([str length]>0) {
+        return YES;
+    }
+    return NO;
+}
 @end

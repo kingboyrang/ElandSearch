@@ -119,5 +119,28 @@
         UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];
         [self buttonCircularTypeTap:newCell];
     }
+    if(indexPath.section==1&&indexPath.row==0){
+        [self buttonSubmit];
+    }
+}
+-(void)buttonSubmit{
+    TKLabelTextFieldCell *cell1=(TKLabelTextFieldCell*)[self.cells objectAtIndex:0];
+    if(!cell1.hasValue){
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 44) animated:YES];
+        [cell1 errorVerify];
+        [cell1 shake];
+        return;
+    }
+    TKLabelTextFieldCell *cell2=(TKLabelTextFieldCell*)[self.cells objectAtIndex:4];
+    if(!cell2.hasValue){
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 180+44*2) animated:YES];
+        [cell2 errorVerify];
+        [cell2 shake];
+        return;
+    }
+    if (!self.hasNetwork) {
+        [self showNoNetworkErrorView];
+        return;
+    }
 }
 @end

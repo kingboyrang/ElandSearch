@@ -231,6 +231,71 @@
     if (indexPath.section==0&&indexPath.row==13){
         [self buttonImageSelectTap];
     }
+    if (indexPath.section==1&&indexPath.row==0){
+        [self buttonSubmit];
+    }
 }
+-(void)buttonSubmit{
+    TKLabelTextFieldCell *cell1=[self.cells objectAtIndex:1];
+    if (!cell1.hasValue) {
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 135) animated:YES];
+        [cell1 errorVerify];
+        [cell1 shake];
+        return;
+    }
+    TKLabelTextFieldCell *cell2=[self.cells objectAtIndex:2];
+    if (!cell2.hasValue) {
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 135+44) animated:YES];
+        [cell2 errorVerify];
+        [cell2 shake];
+        return;
+    }
+    TKLabelTextFieldCell *cell3=[self.cells objectAtIndex:3];
+    if (!cell3.hasValue) {
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 135+44*2) animated:YES];
+        [cell3 errorVerify];
+        [cell3 shake];
+        return;
+    }
+    TKLabelTextFieldCell *cell4=[self.cells objectAtIndex:6];
+    if (!cell4.hasValue) {
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 135+44*5) animated:YES];
+        [cell4 errorVerify];
+        [cell4 shake];
+        return;
+    }
+    TKLabelTextFieldCell *cell5=[self.cells objectAtIndex:8];
+    if (!cell5.hasValue) {
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 135+44*7) animated:YES];
+        [cell5 errorVerify];
+        [cell5 shake];
+        return;
+    }
+    TKLabelTextFieldCell *cell6=[self.cells objectAtIndex:9];
+    if (!cell6.hasValue) {
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 135+44*8) animated:YES];
+        [cell6 errorVerify];
+        [cell6 shake];
+        return;
+    }
+    TKLabelTextFieldCell *cell7=[self.cells objectAtIndex:10];
+    if (!cell7.hasValue) {
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 135+44*9) animated:YES];
+        [cell7 errorVerify];
+        [cell7 shake];
+        return;
+    }
+    TKLabelTextFieldCell *cell8=[self.cells objectAtIndex:12];
+    if (!cell8.hasValue) {
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 135+44*11) animated:YES];
+        [cell8 errorVerify];
+        [cell8 shake];
+        return;
+    }
+    if (!self.hasNetwork) {
+        [self showNoNetworkErrorView];
+        return;
+    }
 
+}
 @end

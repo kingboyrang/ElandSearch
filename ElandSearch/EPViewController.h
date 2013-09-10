@@ -17,4 +17,5 @@
 //重写父类方法
 -(void)deletePhotoScrollCell;
 -(void)loadPhotos;
+-(void)buttonSubmit;
 @end

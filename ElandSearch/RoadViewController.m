@@ -176,5 +176,44 @@
     if (indexPath.section==0&&indexPath.row==5){
         [self buttonImageSelectTap];
     }
+    if(indexPath.section==1&&indexPath.row==0){
+        [self buttonSubmit];
+    }
+}
+-(void)buttonSubmit{
+    TKLabelTextFieldCell *cell1=(TKLabelTextFieldCell*)[self.cells objectAtIndex:0];
+    if(!cell1.hasValue){
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 44) animated:YES];
+        [cell1 errorVerify];
+        [cell1 shake];
+        return;
+    }
+    TKLabelTextFieldCell *cell2=(TKLabelTextFieldCell*)[self.cells objectAtIndex:1];
+    if(!cell2.hasValue){
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 44) animated:YES];
+        [cell2 errorVerify];
+        [cell2 shake];
+        return;
+    }
+    TKLabelTextFieldCell *cell3=(TKLabelTextFieldCell*)[self.cells objectAtIndex:2];
+    if(!cell3.hasValue){
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 44) animated:YES];
+        [cell3 errorVerify];
+        [cell3 shake];
+        return;
+    }
+    TKLabelTextFieldCell *cell4=(TKLabelTextFieldCell*)[self.cells objectAtIndex:4];
+    if(!cell4.hasValue){
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 44*4+120) animated:YES];
+        [cell4 errorVerify];
+        [cell4 shake];
+        return;
+    }
+    if (!self.hasNetwork) {
+        [self showNoNetworkErrorView];
+        return;
+    }
+    
+    
 }
 @end

@@ -11,7 +11,9 @@
 #import "TKEmptyCell.h"
 #import "TKLabelTextViewCell.h"
 #import "SwitchLightNumber.h"
-@interface LightViewController ()
+@interface LightViewController (){
+    SwitchLightNumber *_switchLightNumber;
+}
 -(void)exitKeyboard;
 @end
 
@@ -22,6 +24,7 @@
     [super dealloc];
     [_tableView release],_tableView=nil;
     [_cells release],_cells=nil;
+    [_switchLightNumber release],_switchLightNumber=nil;
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,11 +54,11 @@
     cell2.textLabel.font=[UIFont boldSystemFontOfSize:16.0];
     
     TKEmptyCell *cellSwitch=[[[TKEmptyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil] autorelease];
-    SwitchLightNumber *lightView=[[[SwitchLightNumber alloc] initWithFrame:CGRectMake(15,0, 300, 44)] autorelease];
-    lightView.autoresizesSubviews=YES;
-    lightView.autoresizingMask=UIViewAutoresizingFlexibleLeftMargin;
-    lightView.backgroundColor=[UIColor clearColor];
-    [cellSwitch.contentView addSubview:lightView];
+    _switchLightNumber=[[SwitchLightNumber alloc] initWithFrame:CGRectMake(15,0, 300, 44)];
+    _switchLightNumber.autoresizesSubviews=YES;
+    _switchLightNumber.autoresizingMask=UIViewAutoresizingFlexibleLeftMargin;
+    _switchLightNumber.backgroundColor=[UIColor clearColor];
+    [cellSwitch.contentView addSubview:_switchLightNumber];
     
     TKLabelTextFieldCell *cell3=[[[TKLabelTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil] autorelease];
     cell3.label.componentsAndPlainText=[self labelShowName:@"路燈編號:" required:YES];
@@ -188,6 +191,50 @@
     }
     if (indexPath.section==0&&indexPath.row==9) {
         [self buttonImageSelectTap];
+    }
+    if (indexPath.section==1&&indexPath.row==0) {
+        [self buttonSubmit];
+    }
+}
+-(void)buttonSubmit{
+    TKLabelTextFieldCell *cell1=(TKLabelTextFieldCell*)[self.cells objectAtIndex:0];
+    if(!cell1.hasValue){
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 44) animated:YES];
+        [cell1 errorVerify];
+        [cell1 shake];
+        return;
+    }
+    if (_switchLightNumber.currentIndex==1) {
+        TKLabelTextFieldCell *cell3=[self.cells objectAtIndex:3];
+        if (!cell3.hasValue) {
+            [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 44) animated:YES];
+            [cell3 errorVerify];
+            [cell3 shake];
+        }
+    }else{
+        TKLabelTextFieldCell *cell4=[self.cells objectAtIndex:4];
+        if (!cell4.hasValue) {
+            [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 44) animated:YES];
+            [cell4 errorVerify];
+            [cell4 shake];
+        }
+    }
+    TKLabelTextFieldCell *cell5=[self.cells objectAtIndex:5];
+    if (!cell5.hasValue) {
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 44*5) animated:YES];
+        [cell5 errorVerify];
+        [cell5 shake];
+    }
+    TKLabelTextFieldCell *cell6=[self.cells objectAtIndex:8];
+    if (!cell6.hasValue) {
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.view.bounds.size.width, 44*6+120*2) animated:YES];
+        [cell6 errorVerify];
+        [cell6 shake];
+    }
+
+    if (!self.hasNetwork) {
+        [self showNoNetworkErrorView];
+        return;
     }
 }
 @end

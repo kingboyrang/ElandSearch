@@ -12,4 +12,5 @@
 @property(nonatomic,retain) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *cells;
 -(void)buttonCircularTypeTap:(id)sender;
+-(void)buttonSubmit;
 @end

@@ -39,12 +39,12 @@
 +(void)save:(UserSet*)obj{
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:obj];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:data forKey:@"localEncodeSet"];
+    [defaults setObject:data forKey:@"localCacheUserSet"];
     [defaults synchronize];
 }
 +(UserSet*)systemUser{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *data = [defaults objectForKey:@"localEncodeSet"];
+    NSData *data = [defaults objectForKey:@"localCacheUserSet"];
     if (data) {
       UserSet *obj = (UserSet*)[NSKeyedUnarchiver unarchiveObjectWithData: data];
       return obj;

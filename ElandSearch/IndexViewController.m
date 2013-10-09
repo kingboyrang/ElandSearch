@@ -8,6 +8,7 @@
 
 #import "IndexViewController.h"
 #import "TPMenuCell.h"
+#import "UIImage+TPCategory.h"
 @interface IndexViewController ()
 
 @end
@@ -57,7 +58,17 @@
     
     NSString *path=[[NSBundle mainBundle] pathForResource:@"Menu" ofType:@"plist"];
     _listData=[[NSArray alloc] initWithContentsOfFile:path];
-
+    /***
+    NSString *savepath=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *filePath=[savepath stringByAppendingPathComponent:@"Default@2x.png"];
+    UIImage *image=[UIImage imageNamed:@"load@2x.jpg"];
+    [image saveImage:filePath];
+    
+    
+    NSString *filePath1=[savepath stringByAppendingPathComponent:@"Default-568h@2x.png"];
+    UIImage *image1=[[UIImage imageNamed:@"ipad_load.jpg"] imageByScalingToSize:CGSizeMake(640, 1136)];
+    [image1 saveImage:filePath1];
+     ***/
 	// Do any additional setup after loading the view.
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

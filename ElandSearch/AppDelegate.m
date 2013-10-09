@@ -21,6 +21,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTintColor:[UIColor colorWithRed:104/255.0 green:171/255.0 blue:4/255.0 alpha:1.0]];
+    //实时监听网络
+    NetWorkConnection *network=[NetWorkConnection sharedInstance];
+    [network dynamicListenerNetwork:^(NetworkStatus status, BOOL isConnection) {
+        network.hasNetWrok=isConnection;
+    }];
     
     //[asyncHelper asyncCircularTypes];
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
@@ -30,26 +36,18 @@
         user.isFirstLoad=YES;
     }
     if (user.isFirstLoad) {
-        user.isFirstLoad=NO;
+        //user.isFirstLoad=NO;
         [UserSet save:user];
-        SecrecyViewController *privacy=[[SecrecyViewController alloc] init];
+        SecrecyViewController *privacy=[[[SecrecyViewController alloc] init] autorelease];
         privacy.title=@"隱私及資訊安全保護政策";
-        UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:privacy];
+        UINavigationController *nav=[[[UINavigationController alloc] initWithRootViewController:privacy] autorelease];
          self.window.rootViewController = nav;
-        [privacy release];
-        [nav release];
-        [self startLoading];
+        //[self startLoading];
     }else{
         MainViewController *main=[[[MainViewController alloc] init] autorelease];
         self.window.rootViewController = main;
     }
-    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTintColor:[UIColor colorWithRed:104/255.0 green:171/255.0 blue:4/255.0 alpha:1.0]];
-    //实时监听网络
-    [[NetWorkConnection sharedInstance] dynamicListenerNetwork:^(NetworkStatus status, BOOL isConnection) {
-         NSNumber *boo=[[[NSNumber alloc] initWithBool:isConnection] autorelease];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"networkNotice" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:boo,@"isConnection", nil]];
-    }];
-    
+       
     [self.window makeKeyAndVisible];
     return YES;
 }

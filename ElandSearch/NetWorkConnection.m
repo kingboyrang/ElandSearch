@@ -20,6 +20,7 @@
 
 @implementation NetWorkConnection
 @synthesize delegate;
+@synthesize hasNetWrok;
 //单例模式
 + (NetWorkConnection *)sharedInstance{
     static dispatch_once_t  onceToken;

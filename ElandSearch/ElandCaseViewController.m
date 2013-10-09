@@ -8,6 +8,7 @@
 
 #import "ElandCaseViewController.h"
 #import "WBErrorNoticeView.h"
+#import "NetWorkConnection.h"
 @interface ElandCaseViewController (){
     AnimateLoadView *_loadView;
     AnimateErrorView *_errorView;
@@ -49,14 +50,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)receiveNetworkNotice:(NSNotification*)notice{
-    NSDictionary *dic=[notice userInfo];
-    NSNumber *number=[dic objectForKey:@"isConnection"];
-    BOOL isConnection=[number boolValue];
-    _hasNetwork=isConnection;
-    if (!isConnection) {
-        [self showNoNetworkErrorView];
-    }
+-(BOOL)hasNetwork{
+    return [NetWorkConnection sharedInstance].hasNetWrok;
 }
 -(void)showNoNetworkErrorView{
     WBErrorNoticeView *notice = [WBErrorNoticeView errorNoticeInView:self.view title:@"Network Error" message:@"Check your network connection."];

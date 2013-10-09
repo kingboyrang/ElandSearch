@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PushInfo : UIViewController
+@interface PushInfo : BasicViewController
 
 @end

@@ -21,6 +21,7 @@ typedef void (^ListenerNetWorkResult)(NetworkStatus status,BOOL isConnection);
     Reachability *hostReach;
     ListenerNetWorkResult _listenerNetWorkResult;
 }
+@property(nonatomic,assign) BOOL hasNetWrok;
 @property(nonatomic,assign) id<NetWorkDelegate> delegate;
 //单例模式
 + (NetWorkConnection *)sharedInstance;
